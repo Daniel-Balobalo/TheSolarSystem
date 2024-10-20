@@ -1,0 +1,89 @@
+/* General styling for the body of the webpage */
+body {
+    margin: 0; /* Removes default margins */
+    height: 100vh; /* Sets the height to cover the entire viewport */
+    display: flex; /* Flexbox layout */
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+    background-color: black; /* Sets the background to black */
+    overflow: hidden; /* Prevents scrolling when content exceeds the viewport */
+}
+
+/* Container for the sun, earth, and moon */
+.container {
+    font-size: 10px; /* Base font size, affects rem/em units */
+    width: 40em; /* Sets the width of the container */
+    height: 40em; /* Sets the height of the container */
+    position: relative; /* Allows absolute positioning of children */
+}
+
+/* Sun styling */
+.sun {
+    position: absolute; /* Positioned absolutely within the container */
+    top: 15em; /* Vertical positioning */
+    left: 15em; /* Horizontal positioning */
+    width: 10em; /* Diameter of the sun */
+    height: 10em; /* Same as width for a perfect circle */
+    background-color: yellow; /* Sun color */
+    border-radius: 50%; /* Makes the sun circular */
+    box-shadow: 0 0 3em white; /* Adds a glowing effect around the sun */
+}
+
+/* General styling for orbit paths (earth and moon) */
+.earth, .moon {
+    position: absolute; /* Positioned relative to their parent element */
+    border-style: solid; /* Adds a solid border */
+    border-color: white transparent transparent transparent; /* Adds a white border at the top left */
+    border-width: 0.1em 0.1em 0 0; /* Specifies border thickness */
+    border-radius: 50%; /* Makes the border circular */
+}
+
+/* Earth orbit and animation */
+.earth {
+    top: 5em; /* Positioning from the top */
+    left: 5em; /* Positioning from the left */
+    width: 30em; /* Orbit diameter */
+    height: 30em; /* Same as width for a perfect circular orbit */
+    animation: orbit 36.5s linear infinite; /* Animates earth's orbit in 36.5 seconds */
+}
+
+/* Moon orbit and animation */
+.moon {
+    top: 0; /* Positioned within the earth's orbit */
+    right: 0; /* Positioned on the right side of the earth */
+    width: 8em; /* Moon orbit diameter */
+    height: 8em; /* Same as width for a circular orbit */
+    animation: orbit 2.7s linear infinite; /* Animates moon's orbit in 2.7 seconds */
+}
+
+/* Styling the earth and moon themselves (using pseudo-elements) */
+.earth::before, .moon::before {
+    content: ''; /* Adds an empty content block */
+    position: absolute; /* Positioned within their respective orbits */
+    border-radius: 50%; /* Makes them circular */
+}
+
+/* Earth itself */
+.earth::before {
+    top: 2.8em; /* Positioning within the orbit */
+    right: 2.8em;
+    width: 3em; /* Earth size */
+    height: 3em; /* Same as width for a perfect circle */
+    background-color: aqua; /* Earth color */
+}
+
+/* Moon itself */
+.moon::before {
+    top: 0.8em; /* Positioning within the orbit */
+    right: 0.2em;
+    width: 1.2em; /* Moon size */
+    height: 1.2em; /* Same as width for a perfect circle */
+    background-color: silver; /* Moon color */
+}
+
+/* Animation keyframe for orbit rotation */
+@keyframes orbit {
+    to {
+        transform: rotate(360deg); /* Completes a full rotation */
+    }
+}
