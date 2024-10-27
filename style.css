@@ -8,7 +8,7 @@ body {
     overflow: hidden; /* Prevents scrolling when content exceeds the viewport */
 }
 
-/* Container for the sun and earth */
+/* Container for the sun and the planets */
 .container {
     font-size: 10px; /* Base font size, affects rem/em units */
     width: 40em; /* Sets the width of the container */
@@ -28,6 +28,33 @@ body {
     box-shadow: 0 0 3em white; /* Adds a glowing effect around the sun */
 }
 
+/* Mercury orbit and animation */
+.mercury {
+    position: absolute;
+    top: 11.2em; /* Centered vertically for closer circular orbit */
+    left: 11.2em; /* Centered horizontally for closer circular orbit */
+    width: 17em; /* Sets both width and height for a perfect circle */
+    height: 17em; /* Matches width for a circular orbit */
+    border-style: solid;
+    border-color: gray transparent transparent transparent; /* Adds a gray border */
+    border-width: 0.1em 0.1em 0 0; /* Specifies border thickness */
+    border-radius: 50%; /* Makes the border circular */
+    animation: orbit 12.16s linear infinite; /* Mercury orbit animation (12.16s) */
+}
+
+/* Mercury itself */
+.mercury::before {
+    content: '';
+    position: absolute;
+    top: 2.3em; /* Adjusted position within the orbit */
+    right: 1.6em;
+    width: 1em; /* Mercury size */
+    height: 1em; /* Same as width for a perfect circle */
+    background-color: slategray; /* Mercury color */
+    border-radius: 50%; /* Makes Mercury a circle */
+}
+
+
 /* Earth orbit and animation */
 .earth {
     position: absolute;
@@ -46,10 +73,10 @@ body {
 .earth::before {
     content: ''; /* Adds an empty content block */
     position: absolute; /* Positioned within the orbit */
-    top: 2.8em; /* Positioning within the orbit */
+    top: 3.7em; /* Positioning within the orbit */
     right: 2.8em;
-    width: 3em; /* Earth size */
-    height: 3em; /* Same as width for a perfect circle */
+    width: 2.5em; /* Earth size */
+    height: 2.5em; /* Same as width for a perfect circle */
     background-color: aqua; /* Earth color */
     border-radius: 50%; /* Makes Earth a circle */
 }
