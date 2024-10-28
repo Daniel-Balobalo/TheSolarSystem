@@ -1,84 +1,253 @@
 body {
-    margin: 0; /* Removes default margins */
-    height: 100vh; /* Sets the height to cover the entire viewport */
-    display: flex; /* Flexbox layout */
-    align-items: center; /* Centers content vertically */
-    justify-content: center; /* Centers content horizontally */
-    background-color: black; /* Sets the background to black */
-    overflow: hidden; /* Prevents scrolling when content exceeds the viewport */
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    overflow: hidden;
 }
 
 /* Container for the sun and the planets */
 .container {
-    font-size: 10px; /* Base font size, affects rem/em units */
-    width: 40em; /* Sets the width of the container */
-    height: 40em; /* Sets the height of the container */
-    position: relative; /* Allows absolute positioning of children */
+    font-size: 10px;
+    width: 40em;
+    height: 40em;
+    position: relative;
 }
 
 /* Sun styling */
 .sun {
-    position: absolute; /* Positioned absolutely within the container */
-    top: 15em; /* Vertical positioning */
-    left: 15em; /* Horizontal positioning */
-    width: 10em; /* Diameter of the sun */
-    height: 10em; /* Same as width for a perfect circle */
-    background-color: yellow; /* Sun color */
-    border-radius: 50%; /* Makes the sun circular */
-    box-shadow: 0 0 3em white; /* Adds a glowing effect around the sun */
+    position: absolute;
+    top: 15em;
+    left: 15em;
+    width: 10em;
+    height: 10em;
+    background-color: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 3em white;
 }
 
 /* Mercury orbit and animation */
 .mercury {
     position: absolute;
-    top: 11.2em; /* Centered vertically for closer circular orbit */
-    left: 11.2em; /* Centered horizontally for closer circular orbit */
-    width: 17em; /* Sets both width and height for a perfect circle */
-    height: 17em; /* Matches width for a circular orbit */
+    top: 11.2em;
+    left: 11.2em;
+    width: 17em;
+    height: 17em;
     border-style: solid;
-    border-color: gray transparent transparent transparent; /* Adds a gray border */
-    border-width: 0.1em 0.1em 0 0; /* Specifies border thickness */
-    border-radius: 50%; /* Makes the border circular */
-    animation: orbit 12.16s linear infinite; /* Mercury orbit animation (12.16s) */
+    border-color: white transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+    animation: orbit 12.16s linear infinite;
 }
 
 /* Mercury itself */
 .mercury::before {
     content: '';
     position: absolute;
-    top: 2.3em; /* Adjusted position within the orbit */
-    right: 1.6em;
-    width: 1em; /* Mercury size */
-    height: 1em; /* Same as width for a perfect circle */
-    background-color: slategray; /* Mercury color */
-    border-radius: 50%; /* Makes Mercury a circle */
+    top: 2.3em;
+    right: 1.7em;
+    width: 1em;
+    height: 1em;
+    background-color: #708090;
+    border-radius: 50%;
 }
 
+/* Venus orbit and animation */
+.venus {
+    position: absolute;
+    top: 8.25em;
+    left: 8.25em;
+    width: 23em;
+    height: 23em;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+    animation: orbit 24.3s linear infinite;
+}
+
+/* Venus itself */
+.venus::before {
+    content: '';
+    position: absolute;
+    top: 3.3em;
+    right: 2.25em;
+    width: 1.5em;
+    height: 1.5em;
+    background-color: #FFD580;
+    border-radius: 50%;
+}
 
 /* Earth orbit and animation */
 .earth {
     position: absolute;
-    top: 5em; /* Positioning from the top */
-    left: 5em; /* Positioning from the left */
-    width: 30em; /* Orbit diameter */
-    height: 30em; /* Same as width for a perfect circular orbit */
-    border-style: solid; /* Adds a solid border */
-    border-color: white transparent transparent transparent; /* Adds a white border */
-    border-width: 0.1em 0.1em 0 0; /* Specifies border thickness */
-    border-radius: 50%; /* Makes the border circular */
-    animation: orbit 36.5s linear infinite; /* Earth orbit animation (36.5s) */
+    top: 5em;
+    left: 5em;
+    width: 30em;
+    height: 30em;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+    animation: orbit 36.5s linear infinite;
 }
 
 /* Earth itself */
 .earth::before {
-    content: ''; /* Adds an empty content block */
-    position: absolute; /* Positioned within the orbit */
-    top: 3.7em; /* Positioning within the orbit */
-    right: 2.8em;
-    width: 2.5em; /* Earth size */
-    height: 2.5em; /* Same as width for a perfect circle */
-    background-color: aqua; /* Earth color */
-    border-radius: 50%; /* Makes Earth a circle */
+    content: '';
+    position: absolute;
+    top: 3.65em;
+    right: 2.75em;
+    width: 2.5em;
+    height: 2.5em;
+    background-color: #00FFFF;
+    border-radius: 50%;
+}
+
+
+/* Mars orbit and animation */
+.mars {
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    width: 38em;
+    height: 38em;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+    animation: orbit 48.67s linear infinite;
+}
+
+/* Mars itself */
+.mars::before {
+    content: '';
+    position: absolute;
+    top: 5.39em;
+    right: 3.89em;
+    width: 2em;
+    height: 2em;
+    background-color: #FF5349;
+    border-radius: 50%;
+}
+
+/* Jupiter's orbit and animation */
+.jupiter {
+    position: absolute;
+    top: -3.4em;
+    left: -3.4em;
+    width: 48em;
+    height: 48em;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+    animation: orbit 60.84s linear infinite;
+}
+
+/* Jupiter itself */
+.jupiter::before {
+    content: '';
+    position: absolute;
+    top: 6.7em;
+    right: 4.16em;
+    width: 3.5em;
+    height: 3.5em;
+    background-color: #D9A066;
+    border-radius: 50%;
+}
+
+/* Saturn's orbit and animation */
+.saturn {
+    position: absolute;
+    top: -8em;
+    left: -8em;
+    width: 58em;
+    height: 58em;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+    animation: orbit 73.01s linear infinite;
+}
+
+/* Saturn's solid ring */
+.ring {
+    position: absolute;
+    top: 7.25em;
+    right: 4.9em;
+    width: 4.5em;
+    height: 4.5em;
+    border: 0.3em solid rgba(210, 180, 140, 0.6);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* Saturn itself */
+.saturn::before {
+    content: '';
+    position: absolute;
+    top: 8.19em;
+    right: 5.85em;
+    width: 3.25em;
+    height: 3.25em;
+    background-color: #D9C499;
+    border-radius: 50%;
+}
+
+/* Uranus's orbit and animation */
+.uranus {
+    position: absolute;
+    top: -12.55em;
+    left: -12.55em;
+    width: 68.5em;
+    height: 68.5em;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+    animation: orbit 85.18s linear infinite;
+}
+
+/* Uranus itself */
+.uranus::before {
+    content: '';
+    position: absolute;
+    top: 9.7em;
+    right: 7.7em;
+    width: 3em;
+    height: 3em;
+    background-color: #AFDBF5;
+    border-radius: 50%;
+}
+
+
+/* Neptune's orbit and animation */
+.neptune {
+    position: absolute;
+    top: -17.3em;
+    left: -17.3em;
+    width: 78.5em;
+    height: 78.5em;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+    animation: orbit 97.35s linear infinite;
+}
+
+/* Neptune itself */
+.neptune::before {
+    content: '';
+    position: absolute;
+    top: 11.1em;
+    right: 9em;
+    width: 2.99em;
+    height: 2.99em;
+    background-color: #24468E;
+    border-radius: 50%;
 }
 
 /* Animation keyframe for orbit rotation */
