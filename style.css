@@ -16,7 +16,7 @@ body {
     position: relative;
 }
 
-/* Sun styling */
+/* Sun's styling */
 .sun {
     position: absolute;
     top: 15em;
@@ -28,7 +28,7 @@ body {
     box-shadow: 0 0 3em white;
 }
 
-/* Mercury orbit and animation */
+/* Mercury's orbit and animation */
 .mercury {
     position: absolute;
     top: 11.2em;
@@ -54,7 +54,7 @@ body {
     border-radius: 50%;
 }
 
-/* Venus orbit and animation */
+/* Venus's orbit and animation */
 .venus {
     position: absolute;
     top: 8.25em;
@@ -80,7 +80,7 @@ body {
     border-radius: 50%;
 }
 
-/* Earth orbit and animation */
+/* Earth's orbit and animation */
 .earth {
     position: absolute;
     top: 5em;
@@ -107,7 +107,7 @@ body {
 }
 
 
-/* Mars orbit and animation */
+/* Mars's orbit and animation */
 .mars {
     position: absolute;
     top: 1em;
