@@ -1,3 +1,3 @@
 Solar System Screensaver.
 
-![image](https://github.com/user-attachments/assets/83e9bcde-bfb8-4b4d-8667-0cece8a489eb)
+![image](https://github.com/user-attachments/assets/2c7ba791-e9ad-44b5-ac93-d0dc0d10021b)
